@@ -1,0 +1,27 @@
+language: c
+compiler:
+- clang
+- gcc
+
+env:
+    global:
+        - GITHUB_REPO: "Akromx16/Akromx16.github.io"
+        - secure: "sccEHabRZA2c+zocW7Tg+dngHPX32nhF8SasGC+8VN3rmsRXUuvB+woV4sKRd3UJGea2ZYZVUzVmI+NQCDT7895ZhGoYQnPNA1jd+W34mjgA+5XXtjeeWB98Msw/EIh1mQ2hSorRtt9LAdQTirrfl691UEqAcS1CCAUZWXd0rJ6aug1ild2lfiCDXIOsBXEm1kxFhp26ZQ9muGGljpdKZmjjXqRIq4crLOM8JZE9dceUB1xVvjCNOnlSOkQpfUbkBNw/zGsnDFUaxea9wujER4szf3UsXuhnRtIEY9cNjSevfN9VpVcFOzTjwzqhoeTLdVPpKFMzxi1+z9D0eS1P3Qn+Od5daREpwFwUX2WTj8cLuQb76dwmnHkwtsUHDWjYnhkbuG0FUhhY9g806Nk4kZtHKCMDLnEeRHh/0O9oM4ENvspqq/V9ImRLb0SkfzBuBbc5jd5FGGNxvwaA7AzLX3QcsTOxZJkIUbEsQrvTEb3msNWgbQngludgZaHBW3zrTlTvIgS5K6gH9VcXdpMv1zyMP1OgSXJOqR0DxWvbf5NJTChKhax3TAUO/WvGkyJMgWTmo/OwxDHCil2byc/EkNqsdnNwySSwWF9wTBrE00xzO3M2LiN0VKfFLPF0iKG9gWKzJOPNtL93nXVcWHa+WjJPQQyelz0pKIJs2jF8Dh8="
+script:
+    #config
+    - mkdir deploy
+    - cd deploy
+    - git config --global user.email "Travis@travis.org"
+    - git config --global user.name "Travis CI"
+    - git clone --quiet https://${GITHUB_TOKEN}@github.com/Akromx16/Akromx16.github.io.git
+    - cd Akromx16.github.io
+    - ls
+    - rm -rf remote
+    - ls
+    - cp -r ../../remote .
+    - ls
+    - git add remote
+    - git status
+    - git commit -m "Deployed by Travis"
+    - git log
+    - git push --force --quiet origin master
