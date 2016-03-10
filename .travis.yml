@@ -4,11 +4,9 @@ compiler:
 - gcc
 
 env:
-    global:
-        - SOME_VAR="echo 'salut'"
-        - SOME_VAR="echhho 'salut'"
-        - GITHUB_REPO: "Akromx16/Akromx16.github.io"
-        - secure: "RKtqIiv4bTUkLR19kJ54Gys5ulxYlnmjw2QsPUWLV7xahoBSO6BKGIVfi8Pcd8LljJZZHIGBOe/juacpUMVZAaXTSGY530ipyQwVSTioYY59mAXlMGuOK5E6W81bqhbnMeeEASldjkX4a5cpt1G71voLSORkmizgtgC7jwiyLmQSZTVDwQPGwK6rooxpBEteUH8DcMP2vKT6VF04cVBQ5Rcp5/Ss5eeahWmfj9CJ9s+WCnqjEvFd2yfK0dRtdZO+5U6M2U+pzElOSzjODr01Nn1q3sNiJCWJPMxJ7Qk2UkBYcUDi5WIGmRzLN37179fD6EMIdN3IOP1En0FObaTIc2RcTAVI/GTOorsdGIT9QrrUpqx7ouKXLXOnuH8ubFfCJbyPtoPa/LepsnNYaPSmWSTrzbXu6ZlbQrE4K9T+azuHf5+UVRnKcBPlAOBnRiJW6M7Dr4/mYMRiuycGuJvB4EhP6AdOJH+WTcwBjv/5Yb+7IxJatcMpNwc18xPvKOWBVCNyfrQ2jfrWipVqu/trYrOObpHlqoLxeRSfm6gWJkUuIF15CaGrf+Ae3ob+pTE3knvtv10EYOYewUIo7kpaRD3PP65S+mvZGv765vUC/j0Yz6OQK3MQTTI1i5g5IWxL2T4L0gjTN1FvcrWyrDhBuykA9BorTdFDUOL6RWJ6O90="
+    - SOME_VAR="echo 'salut'"
+    - SOME_VAR="echhho 'salut'"
+
 script:
     - $SOME_VAR
 
