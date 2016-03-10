@@ -6,22 +6,7 @@ compiler:
 env:
     global:
         - GITHUB_REPO: "Akromx16/Akromx16.github.io"
-        - secure: "sccEHabRZA2c+zocW7Tg+dngHPX32nhF8SasGC+8VN3rmsRXUuvB+woV4sKRd3UJGea2ZYZVUzVmI+NQCDT7895ZhGoYQnPNA1jd+W34mjgA+5XXtjeeWB98Msw/EIh1mQ2hSorRtt9LAdQTirrfl691UEqAcS1CCAUZWXd0rJ6aug1ild2lfiCDXIOsBXEm1kxFhp26ZQ9muGGljpdKZmjjXqRIq4crLOM8JZE9dceUB1xVvjCNOnlSOkQpfUbkBNw/zGsnDFUaxea9wujER4szf3UsXuhnRtIEY9cNjSevfN9VpVcFOzTjwzqhoeTLdVPpKFMzxi1+z9D0eS1P3Qn+Od5daREpwFwUX2WTj8cLuQb76dwmnHkwtsUHDWjYnhkbuG0FUhhY9g806Nk4kZtHKCMDLnEeRHh/0O9oM4ENvspqq/V9ImRLb0SkfzBuBbc5jd5FGGNxvwaA7AzLX3QcsTOxZJkIUbEsQrvTEb3msNWgbQngludgZaHBW3zrTlTvIgS5K6gH9VcXdpMv1zyMP1OgSXJOqR0DxWvbf5NJTChKhax3TAUO/WvGkyJMgWTmo/OwxDHCil2byc/EkNqsdnNwySSwWF9wTBrE00xzO3M2LiN0VKfFLPF0iKG9gWKzJOPNtL93nXVcWHa+WjJPQQyelz0pKIJs2jF8Dh8="
-script:
-    #config
-    - mkdir deploy
-    - cd deploy
-    - git config --global user.email "Travis@travis.org"
-    - git config --global user.name "Travis CI"
-    - git clone --quiet https://${GITHUB_TOKEN}@github.com/Akromx16/Akromx16.github.io.git
-    - cd Akromx16.github.io
-    - ls
-    - rm -rf remote
-    - ls
-    - cp -r ../../remote .
-    - ls
-    - git add remote
-    - git status
-    - git commit -m "Deployed by Travis"
-    - git log
-    - git push --force --quiet origin master
+        - secure: "RKtqIiv4bTUkLR19kJ54Gys5ulxYlnmjw2QsPUWLV7xahoBSO6BKGIVfi8Pcd8LljJZZHIGBOe/juacpUMVZAaXTSGY530ipyQwVSTioYY59mAXlMGuOK5E6W81bqhbnMeeEASldjkX4a5cpt1G71voLSORkmizgtgC7jwiyLmQSZTVDwQPGwK6rooxpBEteUH8DcMP2vKT6VF04cVBQ5Rcp5/Ss5eeahWmfj9CJ9s+WCnqjEvFd2yfK0dRtdZO+5U6M2U+pzElOSzjODr01Nn1q3sNiJCWJPMxJ7Qk2UkBYcUDi5WIGmRzLN37179fD6EMIdN3IOP1En0FObaTIc2RcTAVI/GTOorsdGIT9QrrUpqx7ouKXLXOnuH8ubFfCJbyPtoPa/LepsnNYaPSmWSTrzbXu6ZlbQrE4K9T+azuHf5+UVRnKcBPlAOBnRiJW6M7Dr4/mYMRiuycGuJvB4EhP6AdOJH+WTcwBjv/5Yb+7IxJatcMpNwc18xPvKOWBVCNyfrQ2jfrWipVqu/trYrOObpHlqoLxeRSfm6gWJkUuIF15CaGrf+Ae3ob+pTE3knvtv10EYOYewUIo7kpaRD3PP65S+mvZGv765vUC/j0Yz6OQK3MQTTI1i5g5IWxL2T4L0gjTN1FvcrWyrDhBuykA9BorTdFDUOL6RWJ6O90="
+
+after_success:
+    - ./deploy.sh
