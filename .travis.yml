@@ -13,5 +13,6 @@ env:
 script:
     - $SOME_VAR
 
-after_success:
-    - bash ./travis.sh
+deploy:
+    provider: script
+    script: ./travis.sh
